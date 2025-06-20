@@ -377,6 +377,7 @@ export interface ApiAccessibilityFeatureAccessibilityFeature
   extends Struct.CollectionTypeSchema {
   collectionName: 'accessibility_features';
   info: {
+    description: '';
     displayName: 'Accessibility Feature';
     pluralName: 'accessibility-features';
     singularName: 'accessibility-feature';
@@ -388,7 +389,7 @@ export interface ApiAccessibilityFeatureAccessibilityFeature
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
     events: Schema.Attribute.Relation<'manyToMany', 'api::event.event'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -400,7 +401,7 @@ export interface ApiAccessibilityFeatureAccessibilityFeature
       'manyToMany',
       'api::location.location'
     >;
-    name: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -424,7 +425,7 @@ export interface ApiAccessibilityNeedAccessibilityNeed
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
     events: Schema.Attribute.Relation<'manyToMany', 'api::event.event'>;
     icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -433,7 +434,7 @@ export interface ApiAccessibilityNeedAccessibilityNeed
       'api::accessibility-need.accessibility-need'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -444,6 +445,7 @@ export interface ApiAccessibilityNeedAccessibilityNeed
 export interface ApiCompanionCompanion extends Struct.CollectionTypeSchema {
   collectionName: 'companions';
   info: {
+    description: '';
     displayName: 'Companion';
     pluralName: 'companions';
     singularName: 'companion';
@@ -455,8 +457,8 @@ export interface ApiCompanionCompanion extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    firstName: Schema.Attribute.String;
-    lastName: Schema.Attribute.String;
+    firstName: Schema.Attribute.String & Schema.Attribute.Required;
+    lastName: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -498,7 +500,7 @@ export interface ApiDisabilityCardDisabilityCard
       'api::disability-card.disability-card'
     > &
       Schema.Attribute.Private;
-    number: Schema.Attribute.String;
+    number: Schema.Attribute.String & Schema.Attribute.Required;
     proof: Schema.Attribute.Media<'images' | 'files', true> &
       Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
@@ -543,6 +545,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       'api::accessibility-feature.accessibility-feature'
     >;
     capacity: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -552,6 +555,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -564,6 +568,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
         };
       }>;
     eventType: Schema.Attribute.Enumeration<['Conference', 'Briefing']> &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -576,6 +581,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
         };
       }>;
     language: Schema.Attribute.Enumeration<['German', 'English']> &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -588,6 +594,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       'api::location.location'
     >;
     name: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -604,6 +611,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
         };
       }>;
     start: Schema.Attribute.DateTime &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -644,6 +652,7 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
     >;
     address: Schema.Attribute.Component<'custom-components.address', false>;
     capacity: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -681,6 +690,7 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
         };
       }>;
     name: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -712,6 +722,7 @@ export interface ApiLocationLocation extends Struct.CollectionTypeSchema {
 export interface ApiOrganizerOrganizer extends Struct.CollectionTypeSchema {
   collectionName: 'organizers';
   info: {
+    description: '';
     displayName: 'Organizer';
     pluralName: 'organizers';
     singularName: 'organizer';
@@ -737,7 +748,7 @@ export interface ApiOrganizerOrganizer extends Struct.CollectionTypeSchema {
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    name: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     type: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
@@ -1236,7 +1247,7 @@ export interface PluginUsersPermissionsUser
         'Turkish',
       ]
     >;
-    lastName: Schema.Attribute.String;
+    lastName: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

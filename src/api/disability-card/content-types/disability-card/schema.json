@@ -12,7 +12,8 @@
   },
   "attributes": {
     "number": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "proof": {
       "type": "media",

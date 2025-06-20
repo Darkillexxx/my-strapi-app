@@ -71,7 +71,7 @@
     },
     "lastName": {
       "type": "string",
-      "required": false
+      "required": true
     },
     "birthday": {
       "type": "date",

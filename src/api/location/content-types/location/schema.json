@@ -30,7 +30,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "image": {
       "type": "media",
@@ -60,7 +61,8 @@
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
     "size": {
       "type": "integer",

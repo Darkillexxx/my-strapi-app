@@ -4,17 +4,20 @@
   "info": {
     "singularName": "companion",
     "pluralName": "companions",
-    "displayName": "Companion"
+    "displayName": "Companion",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
     "firstName": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "lastName": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "user": {
       "type": "relation",

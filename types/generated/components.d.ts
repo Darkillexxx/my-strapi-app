@@ -21,7 +21,7 @@ export interface CustomComponentsContactData extends Struct.ComponentSchema {
     displayName: 'Contact Data';
   };
   attributes: {
-    emailAddress: Schema.Attribute.Email;
+    emailAddress: Schema.Attribute.Email & Schema.Attribute.Required;
     firstName: Schema.Attribute.String;
     lastName: Schema.Attribute.String & Schema.Attribute.Required;
     phone: Schema.Attribute.String;

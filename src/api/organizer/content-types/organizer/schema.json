@@ -4,14 +4,16 @@
   "info": {
     "singularName": "organizer",
     "pluralName": "organizers",
-    "displayName": "Organizer"
+    "displayName": "Organizer",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "description": {
       "type": "text"
@@ -26,14 +28,15 @@
       "type": "string"
     },
     "media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "contactEmail": {
       "type": "email"

@@ -17,7 +17,8 @@
       "type": "string"
     },
     "emailAddress": {
-      "type": "email"
+      "type": "email",
+      "required": true
     }
   }
 }
