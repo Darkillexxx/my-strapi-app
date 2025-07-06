@@ -30,6 +30,12 @@
       "relation": "manyToMany",
       "target": "api::location.location",
       "mappedBy": "accessibility_features"
+    },
+    "tickets": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::ticket.ticket",
+      "mappedBy": "accessibility_features"
     }
   }
 }

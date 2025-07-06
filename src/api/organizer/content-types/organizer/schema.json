@@ -43,6 +43,12 @@
     },
     "type": {
       "type": "string"
+    },
+    "events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::event.event",
+      "mappedBy": "organizer"
     }
   }
 }
