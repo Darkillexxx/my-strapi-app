@@ -1,0 +1,28 @@
+.event-list-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.event-list {
+    list-style: none;
+    padding: 0;
+}
+
+.event-item {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background: #fafafa;
+    transition: background 0.2s;
+}
+
+.event-item:hover {
+    background: #f0f0f0;
+}
+
+.loading {
+    text-align: center;
+    margin-top: 4rem;
+}
