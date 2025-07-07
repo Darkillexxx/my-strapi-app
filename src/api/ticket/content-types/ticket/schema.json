@@ -1,0 +1,70 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tickets",
+  "info": {
+    "singularName": "ticket",
+    "pluralName": "tickets",
+    "displayName": "Ticket",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "ticketStatus": {
+      "type": "enumeration",
+      "enum": [
+        "available",
+        "disabled",
+        "sold_out"
+      ]
+    },
+    "price": {
+      "type": "integer"
+    },
+    "currency": {
+      "type": "enumeration",
+      "enum": [
+        "EUR"
+      ]
+    },
+    "format": {
+      "type": "enumeration",
+      "enum": [
+        "digital",
+        "physical"
+      ]
+    },
+    "zone": {
+      "type": "string"
+    },
+    "seat": {
+      "type": "string"
+    },
+    "refundPolicy": {
+      "type": "text"
+    },
+    "ticketType": {
+      "type": "enumeration",
+      "enum": [
+        "standard",
+        "student"
+      ]
+    },
+    "event": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::event.event",
+      "inversedBy": "tickets"
+    },
+    "accessibility_features": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::accessibility-feature.accessibility-feature",
+      "inversedBy": "tickets"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}
