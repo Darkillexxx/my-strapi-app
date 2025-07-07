@@ -61,7 +61,6 @@ const EventDetailPage: React.FC = () => {
     const title = event.name || event.title || 'No Title';
     const description = event.description || 'No description';
 
-    // Получаем URL изображения
     const imageUrl = event.image && event.image.length > 0
         ? `http://localhost:1337${event.image[0].url}`
         : null;
